@@ -15,7 +15,7 @@ donde el angulo de nutación se representa con alpha y gamma la velocidad de pre
 
 Por otra parte introducimos un modelo para la velocidad de precesión con respecto a un gyroscopio normal. 
 
-$$ wp = r*M*g/I*w $$
+$$\gamma` = r*M*g/I*w$$
 
 ## Descripción de los modelos y componentes
 Para llevar acabo la validación del modelo hemos desarrollado los siguientes elementos.
