@@ -11,9 +11,10 @@ package MYS
     parameter Real M;
     parameter Real r;
     parameter Real g;
-    algorithm
-      I := 0.5*M*R*R;
-      Wp := r*M*g/(I*w);
+    
+    equation
+      I = 0.5*M*R*R;
+      Wp = r*M*g/(I*w);
       
   annotation(
       Diagram(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-80, 80}, {80, -80}}), Ellipse(origin = {0, -12}, fillColor = {245, 194, 17}, pattern = LinePattern.None, fillPattern = FillPattern.Solid, extent = {{-60, -20}, {60, 20}}), Ellipse(origin = {0, 8}, fillColor = {245, 194, 17}, pattern = LinePattern.None, fillPattern = FillPattern.Solid, extent = {{-60, -20}, {60, 20}}), Rectangle(origin = {0, -2}, fillColor = {245, 194, 17}, pattern = LinePattern.None, fillPattern = FillPattern.Solid, extent = {{-60, 10}, {60, -10}})}),
@@ -22,15 +23,15 @@ package MYS
   end DiscBlock;
   
   block NutationBlock
-    Modelica.Blocks.Interfaces.RealInput wp annotation(
-      Placement(transformation(origin = {0, 80}, extent = {{-20, -20}, {20, 20}}, rotation = -90), iconTransformation(origin = {0, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-    Modelica.Blocks.Interfaces.RealInput Kv annotation(
-      Placement(transformation(origin = {-80, 50}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-40, 90}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
     Modelica.Blocks.Interfaces.RealInput Km annotation(
-      Placement(transformation(origin = {0, -80}, extent = {{-20, -20}, {20, 20}}, rotation = 90), iconTransformation(origin = {40, 90}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+      Placement(transformation(origin = {0, 80}, extent = {{-20, -20}, {20, 20}}, rotation = -90), iconTransformation(origin = {0, -90}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+    Modelica.Blocks.Interfaces.RealInput wp annotation(
+      Placement(transformation(origin = {-80, 50}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-40, 90}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
     Modelica.Blocks.Interfaces.RealInput I annotation(
-      Placement(transformation(origin = {-80, -50}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-90, -62}, extent = {{-10, -10}, {10, 10}})));
+      Placement(transformation(origin = {0, -80}, extent = {{-20, -20}, {20, 20}}, rotation = 90), iconTransformation(origin = {40, 90}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
     Modelica.Blocks.Interfaces.RealInput H annotation(
+      Placement(transformation(origin = {-80, -50}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-90, -62}, extent = {{-10, -10}, {10, 10}})));
+    Modelica.Blocks.Interfaces.RealInput Kv annotation(
       Placement(transformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-90, 60}, extent = {{-10, -10}, {10, 10}})));
     Modelica.Blocks.Interfaces.RealOutput Nutation annotation(
       Placement(transformation(origin = {60, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 180), iconTransformation(origin = {90, 3.55271e-15}, extent = {{-10, -10}, {10, 10}}))); 
@@ -100,31 +101,31 @@ package MYS
 
   package Examples
   model Example_1
-      NutationBlock nutationBlock(initial_nutation = 0) annotation(
-        Placement(transformation(origin = {-30, 10}, extent = {{-62, -62}, {62, 62}})));
-      AirBlock airBlock3(pKv = 3) annotation(
+      AirBlock airBlock3(pKv = 0) annotation(
         Placement(transformation(origin = {-248, 48}, extent = {{-48, -48}, {48, 48}})));
       SpringBlock springBlock(pKm = 3) annotation(
         Placement(transformation(origin = {-29, -147}, extent = {{-47, -47}, {47, 47}}, rotation = 90)));
-      DiscBlock discBlock(R = 0.1, M = 5, r = 0.02, g = 9.8) annotation(
+      DiscBlock discBlock(R = 0.05, M = 0.3, r = 0.02, g = 9.8) annotation(
         Placement(transformation(origin = {-158, 176}, extent = {{-56, -56}, {56, 56}}, rotation = -90)));
-      inputBlock inputBlock1(Input = 10) annotation(
+      inputBlock inputBlock1(Input = 52.3) annotation(
         Placement(transformation(origin = {-358, 240}, extent = {{-58, -58}, {58, 58}})));
       inputBlock inputBlock11(Input = 1) annotation(
         Placement(transformation(origin = {-248, -50}, extent = {{-48, -48}, {48, 48}})));
+  NutationBlock nutationBlock(initial_nutation = 0)  annotation(
+        Placement(transformation(origin = {-29, 3}, extent = {{-59, -59}, {59, 59}})));
     equation
-  connect(discBlock.Wp, nutationBlock.Kv) annotation(
-        Line(points = {{-108, 198}, {-54, 198}, {-54, 66}}, color = {0, 0, 127}));
-  connect(discBlock.I, nutationBlock.Km) annotation(
-        Line(points = {{-108, 154}, {-6, 154}, {-6, 66}}, color = {0, 0, 127}));
-  connect(inputBlock1.Output, discBlock.w) annotation(
+      connect(inputBlock1.Output, discBlock.w) annotation(
         Line(points = {{-306, 240}, {-158, 240}, {-158, 226}}, color = {0, 0, 127}));
-  connect(airBlock3.Kv, nutationBlock.H) annotation(
-        Line(points = {{-204, 48}, {-86, 48}}, color = {0, 0, 127}));
-  connect(inputBlock11.Output, nutationBlock.I) annotation(
-        Line(points = {{-204, -50}, {-140, -50}, {-140, -28}, {-86, -28}}, color = {0, 0, 127}));
-  connect(nutationBlock.wp, springBlock.Km) annotation(
-        Line(points = {{-30, -46}, {-30, -75}, {-29, -75}, {-29, -105}}, color = {0, 0, 127}));
+  connect(inputBlock11.Output, nutationBlock.H) annotation(
+        Line(points = {{-204, -50}, {-144, -50}, {-144, -34}, {-82, -34}}, color = {0, 0, 127}));
+  connect(nutationBlock.Kv, airBlock3.Kv) annotation(
+        Line(points = {{-82, 38}, {-142, 38}, {-142, 48}, {-204, 48}}, color = {0, 0, 127}));
+  connect(discBlock.I, nutationBlock.I) annotation(
+        Line(points = {{-108, 154}, {-6, 154}, {-6, 56}}, color = {0, 0, 127}));
+  connect(discBlock.Wp, nutationBlock.wp) annotation(
+        Line(points = {{-108, 198}, {-52, 198}, {-52, 56}}, color = {0, 0, 127}));
+  connect(springBlock.Km, nutationBlock.Km) annotation(
+        Line(points = {{-28, -104}, {-28, -50}}, color = {0, 0, 127}));
       annotation(
         Diagram(coordinateSystem(extent = {{-420, 300}, {40, -200}})),
         version = "",
