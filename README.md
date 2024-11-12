@@ -5,30 +5,23 @@ Módelo del ángulo de nutación de un gyroscopio de un solo grado de libertad.
 ---
 
 ## Descripción del proyecto
-Para este proyecto hemos desarrollado el modelo de un giroscopio de un solo grado de libertad. Este tipo de dispositivo nos permite medir el ángulo de nutación con respecto a diferentes velocidades de precesión.   
+Para este proyecto hemos desarrollado el modelo de un sensor basado en el comportamiento de un giroscopio de un solo grado de libertad. Este tipo de dispositivo nos permite medir el angulo de entrada (Gamma) a partir del angulo del eje de salida.   
 
-Para ello disponemos del siguiente modelo: 
+Para ello disponemos de la siguiente ecuación: 
 
 $$ I*\alpha'' + Kv*\alpha' + Km*\alpha = H*\gamma'$$
 
-donde el angulo de nutación se representa con alpha y gamma prima la velocidad de precesión.
-
-Por otra parte introducimos un modelo para la velocidad de precesión con respecto a un gyroscopio normal. 
-
-$$\gamma` = r*M*g/I*w$$
+donde el angulo de salida se representa con alpha y gamma prima la velocidad del angulo de entrada.
 
 ## Descripción de los modelos y componentes
 Para llevar acabo la validación del modelo hemos desarrollado los siguientes elementos.
 
-1. Clases\
-En este directorio podemos encontrar una clase que simula el comportamiento del sistema en un solo modelo y un ejemplo de su uso.
-
-2. Paquetes (MYS.mo)\
+1. Paquetes (MYS.mo)\
 Se ha creado un paquete para cargar todos los bloques, simulaciones y ejemplos de uso. 
 En este paquete se pueden encontrar los siguientes bloques:
     - DiscBlock: Describe el comportamiento de un disco que gira sobre su eje. 
 
-    - NutationBlock: Describe el comportamiento del gyroscopio con un unico grado de libertad.
+    - SensorBlock: Describe el comportamiento del sensor con un unico grado de libertad.
 
     - SpringBlock: Caracteriza el comportamiento del muelle.
 
