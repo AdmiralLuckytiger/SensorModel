@@ -1,6 +1,6 @@
-# **Gyroscopio de un grado de libertad** : Nutación
+# **Gyroscopio de un grado de libertad** : Sensor de velocidad y aceleración.
 
-Módelo del ángulo de nutación de un gyroscopio de un solo grado de libertad.
+Módelo de un sensor basado en el comportamiento de un gyroscopio de un solo grado de libertad.
 
 ---
 
@@ -19,21 +19,24 @@ Para llevar acabo la validación del modelo hemos desarrollado los siguientes el
 1. Paquetes (MYS.mo)\
 Se ha creado un paquete para cargar todos los bloques, simulaciones y ejemplos de uso. 
 En este paquete se pueden encontrar los siguientes bloques:
+
     - DiscBlock: Describe el comportamiento de un disco que gira sobre su eje. 
-
-    - SensorBlock: Describe el comportamiento del sensor con un unico grado de libertad.
-
+![Sistema](./Imagenes/DiscBlock.png "Imagen del DiscBlock")
+    - SensorBlock: Describe el comportamiento del sensor propocionandonos un angulo de salida (Pickoff angle).
+![Sistema](./Imagenes/SensorBlock.png "Imagen del SensorBlock")
     - SpringBlock: Caracteriza el comportamiento del muelle.
-
+![Sistema](./Imagenes/SpringBlock "Imagen del SpringBlock")
     - AirBlock: Caracteriza el comportamiento del fluido.
-
+![Sistema](./Imagenes/AirBlock.png "Imagen del AirBlock")
     - inputBlock: Permite introducir valores.
+![Sistema](./Imagenes/InputBlock.png "Imagen del InputBlock")
 
-Por otra parte disponemos de un ejemplo de sistema completo (Example_1.mo), el cual permite visualizar un diagram de bloques completo del sistema.
-## Instalación y uso del modelo
-Para la instalación y uso del paquete de bloques desarrollado se debe cargar el paquete MYS.mo y simular los test del paquete.
-
+Por otra parte disponemos de un ejemplo de sistema completo (Example_1.mo), el cual permite visualizar un diagram de bloques completo del sistema en un ejemplo que permite medir la velocidad de giro a través del angulo de salida.
+ 
 ![Sistema](./Imagenes/Sistema.png "Imagen del sistema")
+
+## Instalación y uso del modelo
+Para la instalación y uso del paquete de bloques desarrollado se debe cargar el paquete MYS.mo y simular el ejemplo del paquete.
 
 ##  Requisitos de intalación
 Para poder instalar el modelo se debe disponer de acceso al paquete MYS.mo y al software OMEdit.

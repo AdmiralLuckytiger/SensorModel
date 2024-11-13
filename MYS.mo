@@ -121,11 +121,11 @@ package MYS
         Placement(transformation(origin = {-190, 404}, extent = {{-84, -84}, {84, 84}}, rotation = 180)));
   inputBlock inputBlock1(Input = 100)  annotation(
         Placement(transformation(origin = {245, 403}, extent = {{-87, -87}, {87, 87}}, rotation = 180)));
-  inputBlock inputBlock2(Input = 1)  annotation(
+  inputBlock inputBlock2(Input = 50)  annotation(
         Placement(transformation(origin = {250, 232}, extent = {{-86, -86}, {86, 86}}, rotation = 180)));
-  SpringBlock springBlock(pKm = 1)  annotation(
+  SpringBlock springBlock(pKm = 100)  annotation(
         Placement(transformation(origin = {-46, 4}, extent = {{-82, -82}, {82, 82}}, rotation = 90)));
-  AirBlock airBlock(pKv = 0)  annotation(
+  AirBlock airBlock(pKv = 1)  annotation(
         Placement(transformation(origin = {-275, 231}, extent = {{-63, -63}, {63, 63}})));
   SensorBlock sensorBlock(initial_nutation = 0)  annotation(
         Placement(transformation(origin = {-47, 185}, extent = {{-73, -73}, {73, 73}})));
@@ -143,7 +143,7 @@ package MYS
   connect(springBlock.Km, sensorBlock.Km) annotation(
         Line(points = {{-46, 78}, {-46, 120}}, color = {0, 0, 127}));
       annotation(
-        Diagram(coordinateSystem(extent = {{-280, 400}, {160, -140}})),
+        Diagram(coordinateSystem(extent = {{-340, 500}, {340, -80}})),
         version = "",
         uses,
   Icon(graphics = {Ellipse(lineColor = {75, 138, 73}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -100}, {100, 100}}), Polygon(lineColor = {0, 0, 255}, fillColor = {75, 138, 73}, pattern = LinePattern.None, fillPattern = FillPattern.Solid, points = {{-36, 60}, {64, 0}, {-36, -60}, {-36, 60}})}));
