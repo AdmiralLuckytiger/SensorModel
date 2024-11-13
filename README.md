@@ -20,16 +20,16 @@ Para llevar acabo la validación del modelo hemos desarrollado los siguientes el
 Se ha creado un paquete para cargar todos los bloques, simulaciones y ejemplos de uso. 
 En este paquete se pueden encontrar los siguientes bloques:
 
-    - DiscBlock: Describe el comportamiento de un disco que gira sobre su eje. 
-![Sistema](./Imagenes/DiscBlock.png "Imagen del DiscBlock")
-    - SensorBlock: Describe el comportamiento del sensor propocionandonos un angulo de salida (Pickoff angle).
-![Sistema](./Imagenes/SensorBlock.png "Imagen del SensorBlock")
-    - SpringBlock: Caracteriza el comportamiento del muelle.
-![Sistema](./Imagenes/SpringBlock "Imagen del SpringBlock")
-    - AirBlock: Caracteriza el comportamiento del fluido.
-![Sistema](./Imagenes/AirBlock.png "Imagen del AirBlock")
-    - inputBlock: Permite introducir valores.
-![Sistema](./Imagenes/InputBlock.png "Imagen del InputBlock")
+    - DiscBlock: Describe el comportamiento de un disco que gira sobre su eje.
+<img src=./Imagenes/DiscBlock.png width="200"/>
+    - SensorBlock: Describe el comportamiento del sensor propocionandonos un angulo de salida (Pickoff angle).    
+<img src=./Imagenes/SensorBlock.png width="200"/>
+    - SpringBlock: Caracteriza el comportamiento del muelle.\
+<img src=./Imagenes/SpringBlock.png width="200"/>
+    - AirBlock: Caracteriza el comportamiento del fluido.\
+<img src=./Imagenes/AirBlock.png width="200"/>
+    - inputBlock: Permite introducir valores.\
+<img src=./Imagenes/InputBlock.png width="200"/>
 
 Por otra parte disponemos de un ejemplo de sistema completo (Example_1.mo), el cual permite visualizar un diagram de bloques completo del sistema en un ejemplo que permite medir la velocidad de giro a través del angulo de salida.
  
