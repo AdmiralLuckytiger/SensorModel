@@ -1,4 +1,4 @@
-# **Gyroscopio de un grado de libertad** : Sensor de velocidad y aceleración.
+# **Gyroscopio de un grado de libertad** : Sensor de velocidad e integrador.
 
 Módelo de un sensor basado en el comportamiento de un gyroscopio de un solo grado de libertad.
 
@@ -29,6 +29,7 @@ Por otra parte disponemos de un ejemplo de sistema completo (Example.mo), el cua
 
 De la misma forma disponemos del un ejemplo (Velocidad_Giro.mo) el cual mide la velocidad de giro y un ejemplo de integrador que calcula la integral de lav velocidad de entrada.
 
+![Ejemplo de uso de los bloques](./Imagenes/Velocidad_Giro.png)
 ## Instalación y uso del modelo
 Para la instalación y uso del paquete de bloques desarrollado se debe cargar el paquete MYS.mo y simular el ejemplo del paquete.
 
