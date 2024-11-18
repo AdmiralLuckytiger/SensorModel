@@ -21,19 +21,13 @@ Se ha creado un paquete para cargar todos los bloques, simulaciones y ejemplos d
 En este paquete se pueden encontrar los siguientes bloques:
 
     - DiscBlock: Describe el comportamiento de un disco que gira sobre su eje.
-<img src=./Imagenes/DiscBlock.png width="200"/>
     - SensorBlock: Describe el comportamiento del sensor propocionandonos un angulo de salida (Pickoff angle).    
-<img src=./Imagenes/SensorBlock.png width="200"/>
-    - SpringBlock: Caracteriza el comportamiento del muelle.\
-<img src=./Imagenes/SpringBlock.png width="200"/>
-    - AirBlock: Caracteriza el comportamiento del fluido.\
-<img src=./Imagenes/AirBlock.png width="200"/>
-    - inputBlock: Permite introducir valores.\
-<img src=./Imagenes/InputBlock.png width="200"/>
+    - DCMotor: Caracteriza el comportamiento del moto que hace girar el disco.
+    - inputBlock: Permite introducir valores para realizar pruebas.
 
-Por otra parte disponemos de un ejemplo de sistema completo (Example_1.mo), el cual permite visualizar un diagram de bloques completo del sistema en un ejemplo que permite medir la velocidad de giro a través del angulo de salida.
- 
-![Sistema](./Imagenes/Sistema.png "Imagen del sistema")
+Por otra parte disponemos de un ejemplo de sistema completo (Example.mo), el cual permite visualizar un diagrama de bloques completo del sistema en un ejemplo que permite medir la velocidad de giro a través del angulo de salida.
+
+De la misma forma disponemos del un ejemplo (Velocidad_Giro.mo) el cual mide la velocidad de giro y un ejemplo de integrador que calcula la integral de lav velocidad de entrada.
 
 ## Instalación y uso del modelo
 Para la instalación y uso del paquete de bloques desarrollado se debe cargar el paquete MYS.mo y simular el ejemplo del paquete.
@@ -41,4 +35,5 @@ Para la instalación y uso del paquete de bloques desarrollado se debe cargar el
 ##  Requisitos de intalación
 Para poder instalar el modelo se debe disponer de acceso al paquete MYS.mo y al software OMEdit.
 
-
+> [!NOTE]
+> El modelo y las simulaciones se han realizado de acuerdo a los concpetos teóricos expuestos en el texto "Modern Inertial Technology: Navigation, Guidance and Control."
